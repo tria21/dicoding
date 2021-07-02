@@ -36,21 +36,26 @@ class _LoginPageState extends State<LoginPage> {
           Row(
             children: <Widget>[
               Text(
-                "Florist",
+                "Welcome Florista",
                 style: TextStyle(
-                  fontSize: 48,
+                  fontSize: 45,
                   fontWeight: FontWeight.w900,
                   letterSpacing: 1.5,
                 ),
               ),
             ],
           ),
-          // Tulisan Welcome back
+          SizedBox(
+              height: 5,
+            ),
           Text(
-            "Welcome back",
+            "Please Login!",
             style: TextStyle(
                 fontWeight: FontWeight.w300, fontSize: 36, letterSpacing: 5),
           ),
+          SizedBox(
+              height: 5,
+            ),
         ],
       ),
     );
@@ -64,9 +69,9 @@ class _LoginPageState extends State<LoginPage> {
           //membuuat form user
           child: TextFormField(
             decoration: InputDecoration(
-              labelText: "Enter Username",
+              labelText: "Username",
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(25.0),
               ),
             ),
             onChanged: (String value) {
@@ -83,9 +88,9 @@ class _LoginPageState extends State<LoginPage> {
             obscureText: true,
             controller: passwordController,
             decoration: InputDecoration(
-              labelText: "Enter Password",
+              labelText: "Password",
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(25.0),
               ),
             ),
             // The validator receives the text that the user has entered.
@@ -119,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
           style: TextStyle(fontSize: 20, color: Colors.black),
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(25),
         ),
         color: Color(0xFFFFC0CB),
         elevation: 0,
