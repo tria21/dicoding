@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
- 
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
- Widget _showTitle() {
+  Widget _showTitle() {
     return Padding(
       padding: EdgeInsets.only(top: 40),
       child: Column(
@@ -35,33 +35,35 @@ class _LoginPageState extends State<LoginPage> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Text(
-                "Welcome Florista",
-                style: TextStyle(
-                  fontSize: 45,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.5,
+              Flexible(
+                child: Text(
+                  "Welcome Florista",
+                  style: TextStyle(
+                    fontSize: 42,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 1.5,
+                  ),
                 ),
               ),
             ],
           ),
           SizedBox(
-              height: 5,
-            ),
+            height: 5,
+          ),
           Text(
             "Please Login!",
             style: TextStyle(
                 fontWeight: FontWeight.w300, fontSize: 36, letterSpacing: 5),
           ),
           SizedBox(
-              height: 5,
-            ),
+            height: 5,
+          ),
         ],
       ),
     );
   }
 
- Widget _formLogin() {
+  Widget _formLogin() {
     return Form(
       child: Column(children: <Widget>[
         Padding(
@@ -77,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
             onChanged: (String value) {
               setState(() {
                 userid = value;
-               });
+              });
             },
           ),
         ),
@@ -95,7 +97,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
             // The validator receives the text that the user has entered.
             validator: (value) {
-              if (value.isEmpty) { //kondisi ketika input password
+              if (value.isEmpty) {
+                //kondisi ketika input password
                 return 'Enter Password';
               } else if (value.length < 6) {
                 return 'Password must be atleast 6 characters!'; //password min 6 karakter
@@ -108,16 +111,14 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-    Widget _loginButton() {
+  Widget _loginButton() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 30),
       width: double.infinity,
       child: RaisedButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Dashboard(userid))
-          );
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Dashboard(userid)));
         },
         child: Text(
           "Login",
